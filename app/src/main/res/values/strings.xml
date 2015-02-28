@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">mbCatalog</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <color name="negro">#000000</color>
+    <color name="Owain_limon">#ddd877</color>
+    <color name="Owain_naranja">#ee432a</color>
+    <color name="Owain_amarillo">#e1dfa8</color>
+    <color name="Owain_blancopastel">#e5e5e5</color>
+
+    Libros
+    <string name="title_activity_libros">LibrosActivity</string>
+    <string name="titulo_Libros">Libros</string>
+
+    Peliculas
+    <string name="title_activity_peliculas">PeliculasActivity</string>
+    <string name="titulo_Peliculas">Peliculas</string>
+    <string name="title_activity_search_books">searchBooksActivity</string>
+
+</resources>

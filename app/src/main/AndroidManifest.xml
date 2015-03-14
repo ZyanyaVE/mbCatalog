@@ -28,6 +28,18 @@
             android:name=".searchBooksActivity"
             android:label="@string/title_activity_search_books" >
         </activity>
+        <activity
+            android:name=".searchPeliculas"
+            android:label="@string/title_activity_search_peliculas" >
+        </activity>
+        <activity
+            android:name=".SearchPeliculasActivity"
+            android:label="@string/title_activity_search_peliculas" >
+        </activity>
+        <activity
+            android:name=".searchPeliculasActivity"
+            android:label="@string/title_activity_search_peliculas" >
+        </activity>
     </application>
 
 </manifest>

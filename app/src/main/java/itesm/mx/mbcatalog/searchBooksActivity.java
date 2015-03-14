@@ -1,39 +1,61 @@
 package itesm.mx.mbcatalog;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class searchBooksActivity extends ActionBarActivity {
+
+    // Declaración de variables
+    private static final int REQUEST_CODE = 1;
+    String titulo, autor, fecha = " - ";
+    EditText tituloTV, autorTV;
+    final Calendar cal = Calendar.getInstance();
+    DateFormat df = new SimpleDateFormat("dd/MM/yyyy"); // the string representation of date (month/day/year)
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_books);
+
+        // Linkeo de variables con objetos de pantalla
+        tituloTV = (EditText) findViewById(R.id.tituloTV);
+        autorTV = (EditText) findViewById(R.id.autorTV);
+
+    // Get the date today using Calendar object.
+        Date today = Calendar.getInstance().getTime();
+    // Using DateFormat format method we can create a string
+    // representation of a date with the defined format.
+        fecha = df.format(today);
     }
 
+    public void onClickAdd(View v){
+        Intent intent = new Intent();
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_search_books, menu);
-        return true;
-    }
+        if (tituloTV.getText().toString().equals("") || autorTV.getText().toString().equals("")) {
+            Toast.makeText(getApplicationContext(), "Error, faltan datos", Toast.LENGTH_LONG).show();
+        } else
+        {
+            // Agrega los datos recolectados de los EditTexts a los datos de los intents
+            intent.putExtra("titulo", tituloTV.getText().toString());
+            intent.putExtra("autor", autorTV.getText().toString());
+            intent.putExtra("fecha", fecha);
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            setResult(RESULT_OK, intent);
+            finish();
+            Toast.makeText(getApplicationContext(), "Operacion exitosa", Toast.LENGTH_SHORT).show();
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }

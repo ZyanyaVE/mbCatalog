@@ -17,5 +17,6 @@
     <string name="title_activity_peliculas">PeliculasActivity</string>
     <string name="titulo_Peliculas">Peliculas</string>
     <string name="title_activity_search_books">searchBooksActivity</string>
+    <string name="title_activity_search_peliculas">searchPeliculas</string>
 
 </resources>

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,9 @@ public class LibrosActivity extends ActionBarActivity {
     Button addBT;
     ListView librosLV;
     ListViewAdapter miAdaptador;
+    String titulo = "hola", autor = "crayola", fecha = "12/12/12";
+    List<Libro> listLibros = new ArrayList<Libro>();
+    private static final int REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,26 +46,63 @@ public class LibrosActivity extends ActionBarActivity {
         librosLV.setAdapter(miAdaptador);
     }
 
+    // Agrega cada libro a la lista que se utiliza para la variable miAdaptador
     public List<Libro> getDataForListView(){
         Libro libro;
 
-        List<Libro> listLibros = new ArrayList<Libro>();
-        libro = new Libro("Android Programming", "23/10/2010");
-
+        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
         listLibros.add(libro);
-        libro = new Libro("Beginning Android", "10/08/2011");
-
+        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
         listLibros.add(libro);
-        libro = new Libro("Android in 24 hours, Teach Yourself", "25/03/2014");
-
+        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        listLibros.add(libro);
+        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        listLibros.add(libro);
+        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        listLibros.add(libro);
+        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        listLibros.add(libro);
+        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        listLibros.add(libro);
+        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        listLibros.add(libro);
+        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        listLibros.add(libro);
+        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        listLibros.add(libro);
+        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        listLibros.add(libro);
+        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        listLibros.add(libro);
+        libro = new Libro ("Hello Kitty 90", "Jo Rowling", "12/12/12");
         listLibros.add(libro);
 
         return listLibros;
     }
 
+    public Libro nuevoLibro(){
+        Libro libro;
+        libro = new Libro (titulo, autor, fecha);
+        return libro;
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_CODE && resultCode== RESULT_OK) {
+            titulo = data.getExtras().get("titulo").toString();
+            autor = data.getExtras().get("autor").toString();
+            fecha = data.getExtras().get("fecha").toString();
+
+
+            listLibros.add(nuevoLibro());
+
+            miAdaptador.notifyDataSetChanged();
+            Toast.makeText(getApplicationContext(), "Exito", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     public void onClickSearch (View v){
         Intent searchIntent = new Intent(LibrosActivity.this, searchBooksActivity.class);
-
-        startActivity(searchIntent);
+        startActivityForResult(searchIntent, REQUEST_CODE);
     }
 }

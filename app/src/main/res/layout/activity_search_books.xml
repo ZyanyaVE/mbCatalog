@@ -14,4 +14,34 @@
         android:id="@+id/searchBookSV"
         android:layout_gravity="center_horizontal" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="40sp"
+        android:id="@+id/tituloTV"
+        android:hint="titulo"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="40sp"
+        android:id="@+id/autorTV"
+        android:hint="autor"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/buttonshapeadd"
+        android:textSize="20sp"
+        android:text="+"
+        android:id="@+id/addBT"
+        android:onClick="onClickAdd"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="15dp"/>
+
 </LinearLayout>

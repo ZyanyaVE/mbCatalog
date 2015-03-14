@@ -5,18 +5,18 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="106dp"
+        android:layout_height="60dp"
         android:weightSum="1">
 
         <ImageView
-            android:src="@mipmap/ic_launcher"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="15dp"
-            android:layout_width="40dp"
-            android:layout_height="80dp"
             android:id="@+id/imagenIV"
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
             android:layout_weight="0.34"/>
 
         <LinearLayout
@@ -26,20 +26,30 @@
             android:layout_weight="0.41">
 
             <TextView
+                android:id="@+id/tituloTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_marginTop="20dp"
-                android:text="titulo"
-                android:id="@+id/tituloTV"/>
+                android:layout_marginTop="17dp"
+                android:textSize="20sp"
+                android:text="titulo"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="30dp">
 
             <TextView
+                android:id="@+id/yearTV"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="0dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="fecha de adicion"
-                android:id="@+id/fechaAdicionTV" />
+                android:text="fecha"
+                android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

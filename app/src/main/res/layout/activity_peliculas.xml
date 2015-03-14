@@ -10,31 +10,32 @@
     android:background="#ffa904">
 
     <ImageView
+        android:src="@drawable/peliculas"
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/peliculas"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginTop="10dp"/>
 
     <Button
+        android:id="@+id/addBT"
         style="?android:attr/buttonStyleSmall"
 
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/buttonshapeadd"
         android:textSize="25sp"
         android:text="+"
-        android:id="@+id/addBT"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="15dp"/>
+        android:onClick="onClickSearch"
+        android:layout_gravity="center_horizontal"/>
 
     <ListView
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
         android:id="@+id/peliculasLV"
+        android:layout_width="match_parent"
+        android:layout_height="325dp"
+        android:layout_marginTop="5dp"
         android:layout_gravity="center_horizontal"
         android:background="@android:color/transparent"
         android:listSelector="@android:color/transparent"/>

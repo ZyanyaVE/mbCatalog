@@ -43,12 +43,14 @@ public class ListViewAdapter extends ArrayAdapter <Libro> {
         TextView titulo = (TextView) row.findViewById(R.id.tituloTV);
         TextView fecha_adicion = (TextView) row.findViewById(R.id.fechaAdicionTV);
         ImageView libro_imagen = (ImageView) row.findViewById(R.id.imagenIV);
+        TextView autor = (TextView) row.findViewById(R.id.autorTV);
 
         // Obtiene el libro que se encuentra en position y modifica los valores de los objetos de la vista
         Libro libro = listaLibros.get(position);
         titulo.setText(libro.getTitulo());
         fecha_adicion.setText(libro.getFecha_publicacion());
         libro_imagen.setImageResource(R.drawable.ic_launcher);
+        autor.setText(libro.getAutor());
 
         // Regresa renglon con los datos actualizados
         return row;

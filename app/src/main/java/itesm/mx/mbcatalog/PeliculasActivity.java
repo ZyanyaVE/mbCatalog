@@ -21,9 +21,10 @@ public class PeliculasActivity extends ActionBarActivity {
     Button addBT;
     ListView peliculasLV;
     ListViewAdapterPeliculas miAdaptador;
-    String titulo, year = "2000";
+    String titulo, year = "0000";
     List<Pelicula> listPeliculas = new ArrayList<Pelicula>();
     private static final int REQUEST_CODE = 1;
+    float calificacion = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class PeliculasActivity extends ActionBarActivity {
         // Linkeo de variable con elementos en pantalla
         addBT = (Button) findViewById(R.id.addBT);
         peliculasLV = (ListView) findViewById(R.id.peliculasLV);
+
 
         // Adaptador de Arreglo
         AdapterView.OnItemClickListener itemListener = new AdapterView.OnItemClickListener() {
@@ -51,7 +53,7 @@ public class PeliculasActivity extends ActionBarActivity {
     // Agrega cada libro a la lista que se utiliza para la variable miAdaptador
     public List<Pelicula> getDataForListView(){
         Pelicula peli;
-        peli = new Pelicula ("Hello Kitty 90", "2000");
+        peli = new Pelicula ("Hello Kitty 90", "2000", 3);
         listPeliculas.add(peli);
 
         return listPeliculas;
@@ -60,7 +62,7 @@ public class PeliculasActivity extends ActionBarActivity {
     // Crea una nueva película a partir de los datos del ActivityOnResult
     public Pelicula nuevaPelicula(){
         Pelicula peli;
-        peli = new Pelicula (titulo, year);
+        peli = new Pelicula (titulo, year, calificacion);
         return peli;
     }
 
@@ -70,6 +72,7 @@ public class PeliculasActivity extends ActionBarActivity {
         if(requestCode == REQUEST_CODE && resultCode== RESULT_OK) {
             titulo = data.getExtras().get("titulo").toString();
             year = data.getExtras().get("year").toString();
+            calificacion = data.getExtras().getFloat("rate");
 
 
             listPeliculas.add(nuevaPelicula());

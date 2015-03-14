@@ -13,7 +13,7 @@
             android:src="@mipmap/ic_launcher"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:layout_width="40dp"
             android:layout_height="50dp"
@@ -21,9 +21,10 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="197dp"
+            android:layout_width="175dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.41">
+            android:layout_weight="0.41"
+            android:layout_marginLeft="0dp">
 
             <TextView
                 android:id="@+id/tituloTV"
@@ -36,20 +37,38 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
+        <TableLayout
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_marginTop="30dp">
+            android:layout_height="match_parent"
+            android:layout_weight="0.34">
 
-            <TextView
-                android:id="@+id/yearTV"
-                android:layout_width="wrap_content"
-                android:layout_height="15dp"
-                android:layout_marginTop="0dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="fecha"
-                android:textSize="12sp" />
-        </LinearLayout>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp">
+
+                <RatingBar
+                    android:id="@+id/calificacionRB"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:id="@+id/yearTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="25dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="fecha"
+                    android:textSize="12sp"
+                    android:layout_column="0" />
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
 </LinearLayout>

@@ -8,6 +8,8 @@
     <color name="Owain_naranja">#ee432a</color>
     <color name="Owain_amarillo">#e1dfa8</color>
     <color name="Owain_blancopastel">#e5e5e5</color>
+    <color name="Naranja_Obscuro">#db5800</color>
+    <color name="cafe">#ae4600</color>
 
     Libros
     <string name="title_activity_libros">LibrosActivity</string>

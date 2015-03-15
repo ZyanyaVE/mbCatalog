@@ -9,7 +9,7 @@
     android:background="#ffa904">
 
     <SearchView
-        android:id="@+id/searchBookSV"
+        android:id="@+id/searchMoviesSV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal" />
@@ -23,12 +23,14 @@
         android:hint="titulo"/>
 
     <EditText
-        android:id="@+id/autorTV"
+        android:id="@+id/yearTV"
+        android:inputType="number"
+        android:ems="10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="40sp"
-        android:hint="autor"/>
+        android:hint="año de estreno" />
 
     <RatingBar
         android:id="@+id/calificacionRB"
@@ -39,6 +41,7 @@
     <Button
         style="?android:attr/buttonStyleSmall"
         android:id="@+id/addBT"
+
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="15dp"

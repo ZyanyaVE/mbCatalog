@@ -22,6 +22,7 @@ public class LibrosActivity extends ActionBarActivity {
     String titulo = "hola", autor = "crayola", fecha = "12/12/12";
     List<Libro> listLibros = new ArrayList<Libro>();
     private static final int REQUEST_CODE = 1;
+    float calificacion = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,31 +51,21 @@ public class LibrosActivity extends ActionBarActivity {
     public List<Libro> getDataForListView(){
         Libro libro;
 
-        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/2012", 4);
         listLibros.add(libro);
-        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        libro = new Libro ("Harry Potter and the Deathly Hallows", "J.K. Rowling", "12/12/2012", 5);
         listLibros.add(libro);
-        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        libro = new Libro ("The Secrets of the Immortal Nicholas Flammel: The Necromancer", "Michael Scott", "12/12/2012", 3.5f);
         listLibros.add(libro);
-        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        libro = new Libro ("The Fault in Our Stars", "John Green", "12/12/2012", 2);
         listLibros.add(libro);
-        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        libro = new Libro ("The Name of The Wind", "Patrick Rothfuss", "12/12/2012", 2.5f);
         listLibros.add(libro);
-        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        libro = new Libro ("Percy Jackson: The Son of Neptune", "Rick Riordan", "12/12/2012", 4.5f);
         listLibros.add(libro);
-        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
+        libro = new Libro ("Angels and Demons", "Dan Brown", "12/12/2012", 5);
         listLibros.add(libro);
-        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
-        listLibros.add(libro);
-        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
-        listLibros.add(libro);
-        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
-        listLibros.add(libro);
-        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
-        listLibros.add(libro);
-        libro = new Libro ("Hello Kitty", "Jo Rowling", "12/12/12");
-        listLibros.add(libro);
-        libro = new Libro ("Hello Kitty 90", "Jo Rowling", "12/12/12");
+        libro = new Libro ("The Lord of the Rings: The Two Towers", "J.R.R Tolkien", "12/12/2012", 1);
         listLibros.add(libro);
 
         return listLibros;
@@ -82,7 +73,7 @@ public class LibrosActivity extends ActionBarActivity {
 
     public Libro nuevoLibro(){
         Libro libro;
-        libro = new Libro (titulo, autor, fecha);
+        libro = new Libro (titulo, autor, fecha, calificacion);
         return libro;
     }
 
@@ -92,6 +83,7 @@ public class LibrosActivity extends ActionBarActivity {
             titulo = data.getExtras().get("titulo").toString();
             autor = data.getExtras().get("autor").toString();
             fecha = data.getExtras().get("fecha").toString();
+            calificacion = data.getExtras().getFloat("rate");
 
 
             listLibros.add(nuevoLibro());

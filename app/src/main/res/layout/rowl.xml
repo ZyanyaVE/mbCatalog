@@ -11,52 +11,80 @@
         <ImageView
             android:id="@+id/imagenIV"
             android:src="@mipmap/ic_launcher"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
+            android:layout_width="16dp"
+            android:layout_height="40dp"
             android:layout_weight="0.34"/>
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="197dp"
+            android:layout_width="170dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.41">
+            android:layout_weight="0.41"
+            android:layout_marginLeft="0dp">
 
             <TextView
                 android:id="@+id/tituloTV"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_marginTop="10dp"
-                android:text="titulo"/>
+                android:text="The Secrets of the Immortal Nicholas Flammel: The Necromancer"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/cafe"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:id="@+id/autorTV"
+                android:layout_width="200dp"
+                android:layout_height="14dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="5dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="10sp"
                 android:text="autor"
-                android:id="@+id/autorTV" />
-
+                android:textColor="@color/Naranja_Obscuro"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_marginTop="40dp">
+        <TableLayout
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".30">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="12dp"
-                android:layout_marginTop="5dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="fecha de adicion"
-                android:textSize="9sp"
-                android:id="@+id/fechaAdicionTV" />
-        </LinearLayout>
+            <TableRow
+                android:layout_width="65dp"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="4dp">
+
+                <RatingBar
+                    android:id="@+id/calificacionRB"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:layout_marginLeft="2dp"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="20dp"
+                android:layout_height="15dp">
+
+                <TextView
+                    android:id="@+id/fechaAdicionTV"
+                    android:layout_width="20dp"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="fecha"
+                    android:textSize="10sp"
+                    android:layout_column="0"
+                    android:textColor="@color/Naranja_Obscuro"/>
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
 </LinearLayout>

@@ -9,24 +9,23 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ZyanyaVE on 2/23/15.
+ * Created by ZyanyaVE on 3/13/15.
  */
-public class ListViewAdapter extends ArrayAdapter <Libro> {
+public class ListViewAdapterPeliculas extends ArrayAdapter<Pelicula> {
+
     private Context context;
     int layoutResourceId;
-    List<Libro> listaLibros;
+    List<Pelicula> listaPeliculas;
 
-    public ListViewAdapter(Context context, int idResource, List<Libro> libros){
-        super(context, idResource, libros);
+
+    public ListViewAdapterPeliculas(Context context, int idResource, List<Pelicula> peliculas){
+        super(context, idResource, peliculas);
         this.context = context;
         this.layoutResourceId = idResource;
-        this.listaLibros = libros;
+        this.listaPeliculas = peliculas;
     }
 
     @Override
@@ -42,21 +41,18 @@ public class ListViewAdapter extends ArrayAdapter <Libro> {
 
         // Obtiene las referencias a los objetos de renglon
         TextView titulo = (TextView) row.findViewById(R.id.tituloTV);
-        TextView fecha_adicion = (TextView) row.findViewById(R.id.fechaAdicionTV);
-        ImageView libro_imagen = (ImageView) row.findViewById(R.id.imagenIV);
-        TextView autor = (TextView) row.findViewById(R.id.autorTV);
+        TextView year = (TextView) row.findViewById(R.id.yearTV);
+        ImageView peliImagen = (ImageView) row.findViewById(R.id.imagenIV);
         RatingBar rate = (RatingBar) row.findViewById(R.id.calificacionRB);
 
         // Obtiene el libro que se encuentra en position y modifica los valores de los objetos de la vista
-        Libro libro = listaLibros.get(position);
-        titulo.setText(libro.getTitulo());
-        fecha_adicion.setText(libro.getFecha_publicacion());
-        libro_imagen.setImageResource(R.drawable.ic_launcher);
-        autor.setText(libro.getAutor());
-        rate.setRating(libro.getRate());
+        Pelicula pelicula = listaPeliculas.get(position);
+        titulo.setText(pelicula.getTitulo());
+        year.setText(String.valueOf(pelicula.getYear()));
+        peliImagen.setImageResource(R.drawable.ic_launcher);
+        rate.setRating(pelicula.getRate());
 
         // Regresa renglon con los datos actualizados
         return row;
     }
-
 }

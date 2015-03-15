@@ -55,6 +55,24 @@ public class PeliculasActivity extends ActionBarActivity {
         Pelicula peli;
         peli = new Pelicula ("Hello Kitty 90", "2000", 3);
         listPeliculas.add(peli);
+        peli = new Pelicula ("Barbie y el Cascanueces", "2000", 3);
+        listPeliculas.add(peli);
+        peli = new Pelicula ("El Camino hacia el Dorado", "2000", 3.5f);
+        listPeliculas.add(peli);
+        peli = new Pelicula ("Bambi", "2000", 3);
+        listPeliculas.add(peli);
+        peli = new Pelicula ("Harry Potter y el Caliz de Fuego", "2000", 2.5f);
+        listPeliculas.add(peli);
+        peli = new Pelicula ("Hercules", "2000", 5);
+        listPeliculas.add(peli);
+        peli = new Pelicula ("Paranormal Activity", "2000", 3);
+        listPeliculas.add(peli);
+        peli = new Pelicula ("The Fault in Our Stars", "2000", 4);
+        listPeliculas.add(peli);
+        peli = new Pelicula ("The Hangover", "2000", 1);
+        listPeliculas.add(peli);
+        peli = new Pelicula ("The Perks of Being a Wallflower", "2000", .5f);
+        listPeliculas.add(peli);
 
         return listPeliculas;
     }
@@ -62,7 +80,7 @@ public class PeliculasActivity extends ActionBarActivity {
     // Crea una nueva película a partir de los datos del ActivityOnResult
     public Pelicula nuevaPelicula(){
         Pelicula peli;
-        peli = new Pelicula (titulo, year, calificacion);
+        peli = new Pelicula (titulo, "(" + year + ")", calificacion);
         return peli;
     }
 

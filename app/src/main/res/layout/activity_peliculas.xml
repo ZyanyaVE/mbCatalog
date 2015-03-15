@@ -15,18 +15,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="0dp"/>
 
     <Button
         android:id="@+id/addBT"
         style="?android:attr/buttonStyleSmall"
 
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/buttonshapeadd"
-        android:textSize="25sp"
+        android:textSize="23sp"
         android:text="+"
         android:onClick="onClickSearch"
         android:layout_gravity="center_horizontal"/>
@@ -34,7 +34,7 @@
     <ListView
         android:id="@+id/peliculasLV"
         android:layout_width="match_parent"
-        android:layout_height="325dp"
+        android:layout_height="345dp"
         android:layout_marginTop="5dp"
         android:layout_gravity="center_horizontal"
         android:background="@android:color/transparent"

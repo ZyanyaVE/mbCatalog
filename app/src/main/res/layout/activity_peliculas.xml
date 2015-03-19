@@ -7,7 +7,7 @@
     tools:context="itesm.mx.mbcatalog.LibrosActivity"
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="@drawable/wallpaper2">
+    android:background="@drawable/wallpaper2222">
 
     <ImageView
         android:src="@drawable/titulo_peliculas"

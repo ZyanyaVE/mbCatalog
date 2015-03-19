@@ -7,11 +7,12 @@
     tools:context="itesm.mx.mbcatalog.LibrosActivity"
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="#ffa904">
+    android:background="@drawable/wallpaper2"
+    >
 
     <ImageView
         android:id="@+id/titulo"
-        android:src="@drawable/libros"
+        android:src="@drawable/titulo_libros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -24,7 +25,7 @@
         android:layout_height="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="15dp"
-        android:background="@drawable/buttonshapeadd"
+        android:background="@drawable/button_shapeadd"
         android:textSize="23sp"
         android:text="+"
         android:onClick="onClickSearch"
